@@ -5,3 +5,5 @@ alias mv='mv -i'
 
 # Source global definitions
 [[ -f /etc/bashrc ]] && source /etc/bashrc
+
+cowsay "Hello there!"

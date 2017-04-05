@@ -10,4 +10,7 @@ class examples::practitioner {
     source => 'puppet:///modules/examples/practitioner/example.pp',
   }
 
+  package { 'cowsay':
+    ensure => present,
+  }
 }

@@ -12,7 +12,7 @@ class files {
     path   => '/etc/cron.allow',
     line   => 'root',
   }
-  # Add a rule to cron.deny
+  # Add a rule to cron.deny to deny jobs by default
 
 
   # What concat resource is needed for this fragment to work?
