@@ -13,7 +13,7 @@ class webapp {
         docroot    => '/var/www/html',
     }
 
-    @@haproxy::balancermember { $fqdn:
+    @@haproxy::balancermember { $facts['fqdn']:
         listening_service => 'webapp',
     }
 }
