@@ -13,10 +13,7 @@ class webapp {
         docroot    => '/var/www/html',
     }
 
-    include syslog_ng
-    syslog_ng::log {'web app logging':
-        source      => 's_src',
-        filter_spec => 'program("httpd") and level(error..emerg)',
-        file        => '/var/log/httpd'
+    @@haproxy::balancermember { $fqdn:
+        listening_service => 'webapp',
     }
 }
