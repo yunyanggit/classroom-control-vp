@@ -5,8 +5,5 @@ class webapp::wordpress inherits webapp {
   Haproxy::Balancermember[$facts['fqdn']] {
         listening_service => 'wordpress',
   }
-
-  # override the vhost docroot to /opt/wordpress
-
-
+  
 }
