@@ -2,14 +2,14 @@ class review {
   # this class should accept a parameter rather than having
   # the username hardcoded.
 
-  # Uncomment and use this variable where appropriate
-#  $homedir = $user ? {
-#    'root'  => '/root',
-#    default => "/home/$user",
-#  }
-
   # Parameters from exercise 2.2
   $user = 'review'
+
+  #  Uncomment and use this variable where appropriate
+  $homedir = $user ? {
+    'root'  => '/root',
+    default => "/home/$user",
+  }
 
   # Code from exercise 2.2
   include review::motd
