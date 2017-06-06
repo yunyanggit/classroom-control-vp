@@ -26,6 +26,7 @@ class review (
   
   service {'puppet':
     ensure => stopped,
+    enable => false,
   }
 
 }
