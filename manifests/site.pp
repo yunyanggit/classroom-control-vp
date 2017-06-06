@@ -39,6 +39,7 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 node jordan78.puppetlabs.vm { 
    class { 'review': } 
+   include review::motd
 }
 node default {
   # This is where you can declare classes for all nodes.
