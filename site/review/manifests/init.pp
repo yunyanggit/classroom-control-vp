@@ -2,6 +2,8 @@ class review (
   $user = 'review',
 ) {
 
+  include review::motd
+  
   $homedir = $user ? {
     'root'  => '/root',
     default => "/home/$user",
