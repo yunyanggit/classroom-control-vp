@@ -5,6 +5,6 @@ class review::motd {
    owner   => 'root',
    group   => 'root',
    mode    => '0644',
-   content => epp('review/motd.epp', { user => $user }),
+   content => epp('review/motd.epp', { user => $review::user }),
   }
 }
