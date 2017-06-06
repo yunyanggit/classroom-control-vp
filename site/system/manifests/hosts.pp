@@ -5,7 +5,7 @@ class system::hosts {
    host { 'master.puppetlabs.vm':   
      ensure => present,   
      host_aliases => ['master'],   
-     ip => '192.168.X.X',  
+    # ip => '192.168.X.X',  
    } 
    
    host { 'localhost':   
