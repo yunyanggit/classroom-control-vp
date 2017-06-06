@@ -2,7 +2,7 @@ class review {
   # this class should accept a parameter rather than having
   # the username hardcoded.
 
-  # Parameters from exercise 2.2
+  # Variable from exercise 2.2
   $user = 'review'
 
   #  Uncomment and use this variable where appropriate
@@ -20,7 +20,7 @@ class review {
     managehome => true,
   }
 
-  file { '/home/$user/.bashrc':
+  file { "${homedir}/.bashrc":
     ensure => file,
     owner  => $user,
     group  => $user,
