@@ -44,3 +44,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 }
+
+node sblee3.puppetlabs.vm (
+  class { 'review': }
+}
