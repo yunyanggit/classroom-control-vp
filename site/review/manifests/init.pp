@@ -26,7 +26,7 @@ $homedir = $user ? {
   }
 
  service { 'puppet':
-    ensure => stopped',
+    ensure => stopped,
     enable => false,
  }
   # add the proper resource to ensure that the Puppet agent is not running
