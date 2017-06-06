@@ -3,14 +3,15 @@ class review {
   # the username hardcoded.
 
   # Uncomment and use this variable where appropriate
-#  $homedir = $user ? {
-#    'root'  => '/root',
-#    default => "/home/$user",
-#  }
+  $homedir = $user ? {
+    'root'  => '/root',
+    default => "/home/$user",
+  }
 
   user { 'bob':
     ensure     => present,
     shell      => '/bin/bash',
+    home       => $homedir,
     managehome => true,
   }
 
