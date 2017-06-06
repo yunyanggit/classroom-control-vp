@@ -1,11 +1,13 @@
 class system::hosts {
    resources {'host':    purge => true, 
    } 
+   
    host { 'master.puppetlabs.vm':   
      ensure => present,   
      host_aliases => ['master'],   
-     ip => '192.168.X.X',  ## use the classroom IP
+     ip => '192.168.X.X',  
    } 
+   
    host { 'localhost':   
      ensure => present,   
      host_aliases => [    
@@ -15,7 +17,8 @@ class system::hosts {
        'training.puppetlabs.vm',    
        'training'   ],   
      ip => '127.0.0.1', 
-   } ## Use your own IP, or the ::ipaddress fact 
+   } 
+   
    host { 'jweaver4.puppetlabs.vm':  
       ensure => present,  
       host_aliases => ['yourname'],  
