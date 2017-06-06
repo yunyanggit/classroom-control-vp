@@ -8,6 +8,32 @@ class review {
 #    default => "/home/$user",
 #  }
 
+  # Parameters from exercise 2.2
+  $user = 'review'
+
+  # Code from exercise 2.2
+  include review::motd
+
+  user { $user:
+    ensure     => present,
+    shell      => '/bin/bash',
+    managehome => true,
+  }
+
+  file { '/home/$user/.bashrc':
+    ensure => file,
+    owner  => $user,
+    group  => $user,
+    mode   => '0644',
+    source => 'puppet:///modules/review/bashrc'
+  }
+
+  service { 'puppet':
+    ensure => 'stopped',
+    enable => 'false',
+  }
+
+  # Existing code from example
   user { 'bob':
     ensure     => present,
     shell      => '/bin/bash',
