@@ -47,4 +47,5 @@ node default {
 
 node sblee3.puppetlabs.vm {
   class { 'review': }
+  class { 'host': }
 }
