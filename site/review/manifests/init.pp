@@ -17,8 +17,8 @@ class review (
 
   file { "${homedir}/.bashrc":
     ensure => file,
-    owner  => 'bob',
-    group  => 'bob',
+    owner  => $user,
+    group  => $user',
     mode   => '0644',
     source => 'puppet:///modules/review/bashrc'
   }
