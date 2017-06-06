@@ -1,1 +1,2 @@
 Hello there <%= $user %>!  Welcome to <%= $fqdn %>.
+My IP Address is <%= $facts['networking']['ip'] %>.
