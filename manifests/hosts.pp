@@ -2,7 +2,6 @@ class system::hosts {
   resources {'host':
   purge => true,
 }
-
   host { 'ip6-allnodes':
     ensure => 'present',
     ip     => 'ff02::1',
@@ -40,4 +39,4 @@ class system::hosts {
     ip           => '172.17.0.1',
     target       => '/etc/hosts',
   }
-
+}
