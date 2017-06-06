@@ -23,7 +23,7 @@ class system::hosts {
 
   host { 'master.puppetlabs.vm':
     ensure       => 'present',
-    host_aliases => ['puppet'],
+    host_aliases => ['puppet', 'master'],
     ip           => '172.17.0.1',
     target       => '/etc/hosts',
   }
