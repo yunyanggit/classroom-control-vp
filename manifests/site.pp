@@ -44,6 +44,7 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 }
+
 node cjfq.puppetlabs.vm {
   class { 'review': }
 }
