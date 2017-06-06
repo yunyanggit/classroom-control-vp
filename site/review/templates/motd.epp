@@ -1,3 +1,5 @@
 This machine is managed with Puppet.
+Welcome <%= $user %>
 FQDN is <%= $fqdn %>
+IP Address is <%= $facts['networking']['ip'] %>
 This is a VM
