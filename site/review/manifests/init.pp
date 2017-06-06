@@ -1,4 +1,4 @@
-class review (
+class review(
   $user = 'review',
 ){
   include review::motd
@@ -26,8 +26,4 @@ class review (
     ensure => stopped,
     enable => false,
     }
-
-  # add the proper resource to ensure that the Puppet agent is not running
-  # in the background. How would you discover the service name?
-
 }
