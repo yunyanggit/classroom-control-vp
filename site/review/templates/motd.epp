@@ -1,1 +1,1 @@
-This machine is managed with Puppet.
+Hello there <%= $user %>!  Welcome to <%= $fqdn %>.
