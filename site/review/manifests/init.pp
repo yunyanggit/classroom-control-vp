@@ -1,9 +1,10 @@
-class review {
+class review
+  (
+    # Variable from exercise 2.2
+    $user = 'review'
+  ){
   # this class should accept a parameter rather than having
   # the username hardcoded.
-
-  # Variable from exercise 2.2
-  $user = 'review'
 
   #  Uncomment and use this variable where appropriate
   $homedir = $user ? {
