@@ -2,36 +2,14 @@ class system::hosts {
   resources {'host':
   purge => true,
 }
-  host { 'ip6-allnodes':
-    ensure => 'present',
-    ip     => 'ff02::1',
-    target => '/etc/hosts',
-  }
-  host { 'ip6-allrouters':
-    ensure => 'present',
-    ip     => 'ff02::2',
-    target => '/etc/hosts',
-  }
-  host { 'ip6-localnet':
-    ensure => 'present',
-    ip     => 'fe00::0',
-    target => '/etc/hosts',
-  }
-  host { 'ip6-mcastprefix':
-    ensure => 'present',
-    ip     => 'ff00::0',
-    target => '/etc/hosts',
-  }
-  host { 'jascur.puppetlabs.vm':
+  host { $facts['fqdn]:
     ensure       => 'present',
-    host_aliases => ['jascur'],
-    ip           => '172.17.0.4',
-    target       => '/etc/hosts',
+    host_aliases => $facts['hostname'],
+    ip           => $facts['networking']['ip'],
   }
   host { 'localhost':
     ensure => 'present',
     ip     => '127.0.0.1',
-    target => '/etc/hosts',
   }
   host { 'master.puppetlabs.vm':
     ensure       => 'present',
