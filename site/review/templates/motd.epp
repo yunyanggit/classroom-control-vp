@@ -1,4 +1,4 @@
-Welcome to the <%= $fqdn %> machine.
+Welcome <%= $user %> to the <%= $fqdn %> machine.
 My IP Address is <%= $facts['networking']['ip'] %>
 
 This machine is managed with Puppet.
