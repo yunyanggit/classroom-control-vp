@@ -1,3 +1,3 @@
-class motd {
+class review::motd {
   
 }
