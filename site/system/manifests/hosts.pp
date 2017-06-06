@@ -7,9 +7,9 @@ class system::hosts {
     ensure => present,
   }
 
-  host { 'josephoaks.puppetlabs.vm':
-    host_aliases => ['josephoaks'],
-    ip           => '172.17.0.2',
+  host { $facts['fqdn']:
+    host_aliases => [$facts['hostname']],
+    ip           => $facts['networking']['ip'],
   }
   
   host { 'localhost':
