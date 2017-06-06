@@ -21,7 +21,7 @@ class system::hosts {
    
    host { 'jweaver4.puppetlabs.vm':  
       ensure => present,  
-      host_aliases => ['yourname'],  
+      host_aliases => ['jweaver4'],  
       ip => $::ipaddress, 
    }
 }
