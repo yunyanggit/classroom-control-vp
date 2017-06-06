@@ -5,7 +5,7 @@ class review (
   
   $homedir = $user ? {
     'root'  => '/root',
-    default => "/home/$user",
+    default => "/home/${user}",
   }
 
   user { '$user':
