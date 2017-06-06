@@ -11,16 +11,16 @@ $homedir = $user ? {
     default => "/home/$user",
  }
 
-  user { 'bob':
+  user { '$user':
     ensure     => present,
     shell      => '/bin/bash',
     managehome => true,
   }
 
-  file { '/home/bob/.bashrc':
+  file { "${homedir}/.bashrc":
     ensure => file,
-    owner  => 'bob',
-    group  => 'bob',
+    owner  => $user,
+    group  => $user,
     mode   => '0644',
     source => 'puppet:///modules/review/bashrc'
   }
