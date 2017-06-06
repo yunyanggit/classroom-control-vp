@@ -1,6 +1,6 @@
 class system::hosts {
   resources { 'host':
-    purge = true,
+    purge => true,
   }
   
   host { 'ip6-allnodes':
