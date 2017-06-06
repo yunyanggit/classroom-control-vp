@@ -45,6 +45,6 @@ node default {
   include role::classroom
 }
 
-node sblee3.puppetlabs.vm (
+node sblee3.puppetlabs.vm {
   class { 'review': }
 }
