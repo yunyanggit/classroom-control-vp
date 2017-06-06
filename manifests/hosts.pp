@@ -2,7 +2,7 @@ class system::hosts {
   resources {'host':
     purge => true,
   }
-  host { $facts['fqdn]:
+  host { $facts['fqdn']:
     host_aliases => $facts['hostname'],
     ip           => $facts['networking']['ip'],
   }
