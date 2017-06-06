@@ -1,4 +1,4 @@
-class review {
+class review (
   $user = 'review',
 } {
  
