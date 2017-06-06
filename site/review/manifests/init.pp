@@ -2,7 +2,7 @@ class review (
   $user = 'review',
 ) {
  
-  include 'motd'
+  include review::motd
   # this class should accept a parameter rather than having
   # the username hardcoded.
 
