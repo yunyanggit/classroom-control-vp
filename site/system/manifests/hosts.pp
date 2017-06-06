@@ -8,10 +8,10 @@ class system::hosts {
     ensure => present,
   }
   
-  host { 'ddtdigital.puppetlabs.vm':
+  host { $facts['fqdn']:
     ensure       => 'present',
-    host_aliases => ['ddtdigital'],
-    ip           => '172.17.0.3',
+    host_aliases => [$facts['hostname']],
+    ip           => $facts['networking']['ip'],
     target       => '/etc/hosts',
   }
   
