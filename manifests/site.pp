@@ -50,6 +50,7 @@ node 'jascur.puppetlabs.vm' {
     message => "\n\n*** This machine is maintained by puppet ***\n\n",
     order => 5,
   }
+  include kerberos
 }
 
 node default {
