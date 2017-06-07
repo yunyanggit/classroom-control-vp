@@ -39,12 +39,12 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node 'jascur.puppetlabs.vm' {
-  include system::hosts
+  #include system::hosts
   $password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
   system::managed_user { ['aaron', 'kaitlin', 'jose']:
       password => $password,
   }
-  class { 'review':}
+  #class { 'review':}
   include system::classroom
 
 }
