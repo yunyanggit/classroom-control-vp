@@ -1,5 +1,5 @@
 define system::managed_user (
-  $home = undef,
+  $password,
 ) {
   
   $homedir = $title ? {
