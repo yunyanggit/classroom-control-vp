@@ -2,13 +2,13 @@ define system::managed_user (
   $password = undef,
 ) {
   $homedir = $title ? {
-    'root' => '/root',
+    'root'  => '/root',
     default => "/home/$user"
   }
 
   user { $title:
-    ensure => present,
-    password => $password,
+    ensure     => present,
+    password   => $password,
     managehome => true,
   }
 
@@ -23,6 +23,7 @@ define system::managed_user (
       source => 'puppet:///modules/system/bashrc'
     }
   }
+}
 
   # manage a user called $name and that user's `.bashrc` if they're on Linux
   # This can likely reuse some of the code you wrote for the `review` class.
