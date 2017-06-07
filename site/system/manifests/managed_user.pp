@@ -12,11 +12,12 @@ define system::managed_user ( 
      managehome => true, 
    }  
    if $kernel == 'Linux' {  
-     file {"${homedir}/.bashrc":    
+     file {'bashrc':    
        ensure => file,    
        owner => $title,    
-       group => $title,    
-       mode => '0644',    
+       group => $title,
+       path  => "${homedir}/.bashrc",
+       mode  => '0644',    
        source => 'puppet:///modules/system/bashrc'  
      } 
    }
