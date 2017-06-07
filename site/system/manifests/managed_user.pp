@@ -5,7 +5,7 @@ define system::managed_user (
   $homedir = $title ? {
   'root' => '/root',
   default => "/home/$user",
- }
+ }https://github.com/josephoaks/classroom-control-vp/tree/jweaver4/site
 
   File {
     ensure => file,
@@ -20,11 +20,11 @@ define system::managed_user (
    managehome => true,
  }
  
-# if $kernel == 'Linux' {
+ if $kernel == 'Linux' {
    file { 'bashrc' :
      ensure => file,
      path  => "${homedir}/.bashrc",
      source => 'puppet:///modules/system/bashrc'
    }
- # }
+ }
 }   
