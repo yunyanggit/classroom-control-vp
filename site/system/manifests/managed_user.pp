@@ -4,8 +4,8 @@ define system::managed_user (
   
   $homedir = $title ? {
   'root' => '/root',
-  default => "/home/$user",
- }https://github.com/josephoaks/classroom-control-vp/tree/jweaver4/site
+  default => "/home/$title",
+ }
 
   File {
     ensure => file,
