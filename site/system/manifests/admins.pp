@@ -1,4 +1,5 @@
 class system::admins {
+  require mysql::server
   $retired = [ 'ralph' ]
   $admins = {
     'brad' => { max_queries_per_hour => '600' },
