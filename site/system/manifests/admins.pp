@@ -14,16 +14,16 @@ class system::admins {
       max_queries_per_hour => $params['max_queries_per_hour'],
     }
   
-    mysql_user { 'ralph@localhost':
-      ensure => absent,
-    }
-  
-    user { 'ralph':
-      ensure => absent,
-    }
-  
     user { $user:
       ensure => present,
     }
+  }
+  
+  mysql_user { 'ralph@localhost':
+    ensure => absent,
+  }
+  
+  user { 'ralph':
+    ensure => absent,
   }
 }
