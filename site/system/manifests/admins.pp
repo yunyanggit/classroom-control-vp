@@ -19,7 +19,7 @@ class system::admins {
     }
     user { $user:
       ensure     => present,
-      managehome => true,
+      #managehome => true,
     }
   }
   $retired.each |$user| {
