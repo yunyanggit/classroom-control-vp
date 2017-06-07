@@ -14,8 +14,6 @@ define system::managed_user (
     mode => '0644',  
   }
 
-  $password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
-  
   user {$title:
    ensure => present,
    password => $password,
@@ -23,8 +21,9 @@ define system::managed_user (
  }
  
  if $kernel == 'Linux' {
-   file {"${homedir}/.bashrc":
+   file 'bashrc' :
      ensure => file,
+     path  => {"${homedir}/.bashrc",
      source => 'puppet:///modules/system/bashrc'
    }
   }
