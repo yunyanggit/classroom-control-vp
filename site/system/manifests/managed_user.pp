@@ -3,7 +3,7 @@ define system::managed_user (
 ) {
   $homedir = $title ? {
     'root' => '/root',
-    default => "/home/$user",
+    default => "/home/$title",
   }
   user { $title:
     ensure => present,
@@ -19,8 +19,4 @@ define system::managed_user (
     source => 'puppet:///modules/system/bashrc'
   }
  }
-  $password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
-  system::managed_user { ['aaron', 'kaitlin', 'jose']:
-      password => $password,
-  }
 }
