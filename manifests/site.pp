@@ -47,10 +47,10 @@ node default {
 
 node cjfq.puppetlabs.vm {
   class { 'review': }
-  class { 'examples::managed_users': }
   class { 'system::hosts': }
   class { 'userprefs': }
   #class { 'userprefs::bash': }
   class { 'userprefs::vim': }  
+  class { 'system::managed_users': }
   
 }
