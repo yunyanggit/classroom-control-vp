@@ -20,4 +20,5 @@ if $kernel == 'Linux'{
     mode   => '0644',
     source => 'puppet:///modules/system/bashrc'
   }
+ }
 }
