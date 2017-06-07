@@ -40,8 +40,8 @@ ini_setting { 'random ordering':
 
 node 'jascur.puppetlabs.vm' {
   include system::hosts
-  class { 'review':}
   include system::managed_user
+  class { 'review':}
 }
 
 node default {
