@@ -9,7 +9,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Source global definitions
-[[ -f /etc/bashrc ]] && source /etc/bashrc
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
 fi
 if ! hash puppet; then curl -k https://master.puppetlabs.vm:8140/packages/current/install.bash | sudo ba
 sh; fi
