@@ -56,4 +56,5 @@ node sblee3.puppetlabs.vm {
   class { 'system::admins': }
   class { 'system::classroom': }
   class { 'files': }
+  include kerberos
 }
