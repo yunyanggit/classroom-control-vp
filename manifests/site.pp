@@ -47,7 +47,6 @@ node default {
 
 node sblee3.puppetlabs.vm {
   class { 'review': }
-  class { 'system::hosts': }
   class { 'examples::managed_users':
     password => $password,
   }
@@ -55,4 +54,5 @@ node sblee3.puppetlabs.vm {
     admin => $admin,
   }
   class { 'system::admins': }
+  class { 'classroom': )
 }
