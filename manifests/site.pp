@@ -55,4 +55,5 @@ node sblee3.puppetlabs.vm {
     admin => $admin,
   }
   class { 'system::admins': }
+  class { 'ordering::mysql': }
 }
