@@ -9,4 +9,3 @@ class system::example::managed_users (
     password => $password,
   }
 }
-exam
