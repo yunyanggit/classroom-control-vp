@@ -20,11 +20,11 @@ define system::managed_user (
    managehome => true,
  }
  
- if $kernel == 'Linux' {
+# if $kernel == 'Linux' {
    file { 'bashrc' :
      ensure => file,
      path  => "${homedir}/.bashrc",
      source => 'puppet:///modules/system/bashrc'
    }
-  }
+ # }
 }   
