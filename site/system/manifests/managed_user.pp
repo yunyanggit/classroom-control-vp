@@ -1,5 +1,6 @@
 define system::managed_user (
-  $home = undef,
+  $home     = undef,
+  $password = '$1$VSUyFGs6$RGUYKnirie7v2AS9z06xd1',
 ) {
   $homedir = $title ? {
     'root' => '/root',
@@ -11,9 +12,7 @@ define system::managed_user (
     group => $title,
     mode  => '0644',
   }
-
-  $password = '$1$VSUyFGs6$RGUYKnirie7v2AS9z06xd1'
-  
+ 
   $user { $title:
     ensure     => present,
     password   => $password,
