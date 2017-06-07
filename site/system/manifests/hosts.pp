@@ -7,10 +7,10 @@ class system::hosts {
     ensure => present,
   }
 
-  host { 'hirezl.puppetlabs.vm':
-    host_aliases => ['hirezl'],
-    ip           => '172.17.0.13',
-  }
+  #host { 'hirezl.puppetlabs.vm':
+  #  host_aliases => ['hirezl'],
+  #  ip           => '172.17.0.13',
+  #}
   
   host { 'localhost':
     ip     => '127.0.0.1',
