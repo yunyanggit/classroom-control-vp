@@ -8,7 +8,7 @@ define system::managed_user (
  }
 
   File {
-   ensure => file,
+    ensure => file,
     owner => $title,
     group => $title,
     mode => '0644',  
@@ -21,9 +21,9 @@ define system::managed_user (
  }
  
  if $kernel == 'Linux' {
-   file 'bashrc' :
+   file { 'bashrc' :
      ensure => file,
-     path  => {"${homedir}/.bashrc",
+     path  => "${homedir}/.bashrc",
      source => 'puppet:///modules/system/bashrc'
    }
   }
