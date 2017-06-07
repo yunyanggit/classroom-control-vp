@@ -7,8 +7,8 @@ define system::managed_user (
   }
 
   user { $title:
-    ensure => present
-    password => $password
+    ensure => present,
+    password => $password,
     managehome => true,
   }
 
