@@ -18,3 +18,8 @@ define system::managed_user (
   # This can likely reuse some of the code you wrote for the `review` class.
   # Make sure you update variables or paths as required.
 }
+$password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
+
+system::managed_user { ['aaron', 'kaitlin', 'alison']:
+  password => $password,
+}
