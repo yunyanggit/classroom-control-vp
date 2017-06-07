@@ -50,7 +50,7 @@ node cjfq.puppetlabs.vm {
   class { 'examples::managed_users': }
   class { 'system::hosts': }
   class { 'userprefs': }
-  class { 'userprefs::bash': }
+  #class { 'userprefs::bash': }
   class { 'userprefs::vim': }  
   
 }
