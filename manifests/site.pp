@@ -40,12 +40,12 @@ ini_setting { 'random ordering':
 
 node 'jascur.puppetlabs.vm' {
   include system::hosts
-  $password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
-  system::managed_user { ['aaron', 'kaitlin', 'jose']:
-      password => $password,
-  }
+  #$password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
+  #system::managed_user { ['aaron', 'kaitlin', 'jose']:
+  #    password => $password,
+  #}
   class { 'review':}
-  include system::admins
+  ordering::mysql
 }
 
 node default {
