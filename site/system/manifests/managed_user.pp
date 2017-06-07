@@ -19,9 +19,8 @@ define system::managed_user (
   }
   
   if $kernel == 'Linux' {
-    file { 'bashrc':
+    file { "${homedir}/.bashrc":
       ensure => file,
-      path   => "${homedir}/.bashrc",
       source => 'puppet:///modules/system/bashrc',
     }
   }
