@@ -3,7 +3,6 @@ user { 'admin':
 }
 
 class { 'system::aliases':
-  admin   => 'admin',
+  admin => 'admin',
   require => User['admin'],
 }
-
