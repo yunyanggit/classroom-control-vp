@@ -1,9 +1,16 @@
-user { 'admin':
-  ensure => present,
+class system::aliases (
+  String $admin = 'root', # Extra credit: Pattern[\A\w+(?:@\w+\.\w+)?\z]
+) {
+  # uses $admin to build the aliases file
+  file { '/etc/aliases':
+    ensure => file,
+    owner => 'root',
+    group => 'root',
+    mode => '0644',
+    content => epp('system/aliases.epp', { admin => $admin }),
+  }
+  exec { '/usr/bin/newaliases':
+    refreshonly => true,
+    subscribe => File['/etc/aliases'],
+  }
 }
-
-class { 'system::aliases':
-  admin   => 'admin',
-  require => User['admin'],
-}
-
