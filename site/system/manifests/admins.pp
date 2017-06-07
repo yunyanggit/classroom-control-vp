@@ -22,7 +22,7 @@ class system::admins {
       ensure => absent,
     }
   
-    user { $user,
+    user { $user:
       ensure => present,
     }
   }
