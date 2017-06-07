@@ -45,10 +45,11 @@ node 'jascur.puppetlabs.vm' {
       password => $password,
   }
   #class { 'review':}
-  $roothome = homedir('root')
-  $testhome = homedir('test')
-  notify { "Root's home directory is ${roothome}": }
-  notify { "Test's home directory is ${testhome}": }
+  include files
+  files::motd { 'maintainer notice':
+    message => "\n\n*** This machine is maintained by puppet ***\n\n",
+    order => 5,
+  }
 }
 
 node default {
