@@ -45,7 +45,7 @@ node 'jascur.puppetlabs.vm' {
       password => $password,
   }
   #class { 'review':}
-  include system::homedir
+  include system::examples::homedir
 
 }
 
