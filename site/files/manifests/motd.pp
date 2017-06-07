@@ -3,7 +3,8 @@ define files::motd (
   $order = 10,
 ) {
   concat::fragment { "motd fragment: ${name}":
-  target => '/etc/motd',
-  order => $order,
-  content => $message,
+    target => '/etc/motd',
+    order => $order,
+    content => $message,
+  }
 }
