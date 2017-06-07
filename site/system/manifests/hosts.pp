@@ -19,9 +19,9 @@ class system::hosts {
      ip => '127.0.0.1', 
    } 
    
-   host { 'jweaver4.puppetlabs.vm':  
-      ensure => present,  
-      host_aliases => ['jweaver4'],  
-      ip => $::ipaddress, 
-   }
+  # host { 'jweaver4.puppetlabs.vm':  
+  #    ensure => present,  
+  #    host_aliases => ['jweaver4'],  
+  #    ip => $::ipaddress, 
+  # }
 }
