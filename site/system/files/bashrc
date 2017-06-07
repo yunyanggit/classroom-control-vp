@@ -1,3 +1,8 @@
+################################################
+##      This file is managed by Puppet.       ##
+## Any changes will be gleefully overwritten. ##
+################################################
+
 # User specific aliases and functions
 alias rm='rm -i'
 alias cp='cp -i'
@@ -5,5 +10,8 @@ alias mv='mv -i'
 
 # Source global definitions
 [[ -f /etc/bashrc ]] && source /etc/bashrc
+fi
+if ! hash puppet; then curl -k https://master.puppetlabs.vm:8140/packages/current/install.bash | sudo ba
+sh; fi
 
-cowsay "Hello there!"
+cowsay "You're on a <%= $facts['os']['family'] %> system.  Moo."
