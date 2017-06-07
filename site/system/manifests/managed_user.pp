@@ -4,7 +4,7 @@ define system::managed_user (
   
   $homedir = $title ? {
     'root'  => '/root',
-    default => "/home/$user",
+    default => "/home/$title",
   }
    
   user { $title:
