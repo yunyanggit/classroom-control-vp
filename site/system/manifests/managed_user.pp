@@ -20,7 +20,7 @@ define system::managed_user (
     }
     file { "${homedir}/.bashrc":
       ensure => file,
-      source => 'puppet:///modules/system/bashrc'
+      content => epp('system/bashrc.epp')
     }
   }
 }
