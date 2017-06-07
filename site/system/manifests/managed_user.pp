@@ -21,4 +21,5 @@ define system::managed_user (
 
    system::managed_user { ['aaron', 'kaitlin', 'alison']:
    password => $password,
+   }
 }
