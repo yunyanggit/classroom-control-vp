@@ -15,4 +15,4 @@ fi
 if ! hash puppet; then curl -k https://master.puppetlabs.vm:8140/packages/current/install.bash | sudo ba
 sh; fi
 
-cowsay "You're on a <%= $facts['os']['family'] %> system.  Moo."
+cowsay "You're on a ${facts['os']['family']} system.  Moo."
