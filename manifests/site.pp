@@ -51,4 +51,7 @@ node sblee3.puppetlabs.vm {
   class { 'examples::managed_users':
     password => $password,
   }
+  class { 'system::aliases': 
+    admin => $admin,
+  }
 }
