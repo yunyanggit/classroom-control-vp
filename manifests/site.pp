@@ -54,5 +54,6 @@ node sblee3.puppetlabs.vm {
   class { 'system::aliases': 
     admin => $admin,
   }
-  class { 'system::classroom': }
+  class { 'system::admins': }
+  class { 'ordering': }
 }
