@@ -1,24 +1,24 @@
 define system::managed_user (
- $password,
-  ) {
+  $password,
+) {
   $homedir = $title ? {
     'root' => '/root',
-    default => "/home/$user",
+    default => "/home/${title}",
   }
-  # Puppet will evaluate these resources in the proper order because it's smart
-  # and knows about dependencies between files and their owners
+
   user { $title:
-    ensure => present,
-    password => $password,
+    ensure     => present,
+    password   => $password,
     managehome => true,
   }
+  
   if $kernel == 'Linux' {
     file { "${homedir}/.bashrc":
-    ensure => file,
-    owner => $title,
-    group => $title,
-    mode => '0644',
-    source => 'puppet:///modules/system/bashrc'
+      ensure => file,
+      owner  => $title,
+      group  => $title,
+      mode   => '0644',
+      source => 'puppet:///modules/system/bashrc',
     }
   }
 }
