@@ -1,9 +1,9 @@
 define system::managed_user (
-  $home = undef,
+  $password,
 ) {
   $homedir = $title ? {
     'root' => '/root',
-    default => "/home/${user}",
+    default => "/home/${title}",
   }
 
   File {
@@ -12,16 +12,15 @@ define system::managed_user (
     mode  => '0644',
   }
  
-  $user { $title:
+  user { $title:
     ensure     => present,
     password   => $password,
     managehome => true,
   }
   
   if $kernel == 'Linux' {
-    file { 'bashrc':
+    file { "${homedir}/.bashrc":
       ensure => file,
-      path   => "${homedir}/.bashrc",
       source => 'puppet:///modules/system/bashrc',
     }
   }
