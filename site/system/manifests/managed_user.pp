@@ -1,5 +1,4 @@
 define system::managed_user (
-  $home = undef,
   $password,
 ) {
   $homedir = $title ? {
@@ -13,7 +12,7 @@ define system::managed_user (
     mode  => '0644',
   }
  
-  $user { $title:
+  user { $title:
     ensure     => present,
     password   => $password,
     managehome => true,
