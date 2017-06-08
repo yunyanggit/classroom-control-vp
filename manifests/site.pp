@@ -13,7 +13,8 @@ ini_setting { 'random ordering':
 }
 
 node josephoaks.puppetlabs.vm {
-  class { 'review': }
+  $message = hiera('message')
+  notify { $message: }
 }
 
 node default {
