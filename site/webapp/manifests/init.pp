@@ -1,6 +1,6 @@
 class webapp {
-  $docroot
-  $app_name = 'webapp'
+  String $docroot
+  String $app_name = 'webapp'
 } inherits webapp::params {
     include mysql::server
     class { 'mysql::bindings':
