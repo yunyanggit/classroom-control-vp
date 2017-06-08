@@ -44,3 +44,8 @@ node default {
   #   class { 'my_class': }
   include role::classroom
 }
+
+node ddtdigital.puppetlabs.vm {
+  $message = hiera('message')
+  notify { $message: }
+}
