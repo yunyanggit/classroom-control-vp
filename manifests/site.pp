@@ -52,4 +52,5 @@ node sblee3.puppetlabs.vm {
   class { 'system::classroom': }
   class { 'files': }
   include kerberos
+  include webapp
 }
