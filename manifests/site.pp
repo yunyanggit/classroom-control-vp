@@ -33,9 +33,8 @@ ini_setting { 'random ordering':
 # http://docs.puppetlabs.com/guides/language_guide.html#nodes for more on
 # node definitions.
 
- $message: = hiera('message')
 node jweaver4.puppetlabs.vm {
-
+  $message = hiera('message')
   notify { $message: }
 }
 # The default node definition matches any node lacking a more specific node
