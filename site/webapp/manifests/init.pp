@@ -1,5 +1,5 @@
 class webapp (
-  $docroot,
+  $docroot = $webapp::params::docroot,
   $app_name = 'webapp'
 ) inherits webapp::params {
     include mysql::server
