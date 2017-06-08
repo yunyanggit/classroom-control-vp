@@ -1,4 +1,6 @@
-class webapp {
+class webapp (
+  $docroot = $webapp::params::docroot
+) inherits webapp::params {
     include mysql::server
     class { 'mysql::bindings':
         php_enable => true,
@@ -10,7 +12,7 @@ class webapp {
         priority   => '10',
         vhost_name => $facts['fqdn'],
         port       => '80',
-        docroot    => '/var/www/html',
+        docroot    => $docroot,
     }
 
     @@haproxy::balancermember { $facts['fqdn']:
