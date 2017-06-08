@@ -39,18 +39,7 @@ ini_setting { 'random ordering':
 # specified in the console for that node.
 
 node 'jascur.puppetlabs.vm' {
-  #include system::hosts
-  $password = '$1$HdDw//gC$2VBiQ1x5blLPwNS.G.Iw21'
-  system::managed_user { ['aaron', 'kaitlin', 'jose']:
-      password => $password,
-  }
-  #class { 'review':}
-  include files
-  files::motd { 'maintainer notice':
-    message => "\n\n*** This machine is maintained by puppet ***\n\n",
-    order => 5,
-  }
-  include kerberos
+ include webapp::wordpress
 }
 
 node default {
