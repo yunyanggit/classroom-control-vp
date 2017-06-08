@@ -1,7 +1,11 @@
-class webapp::wordpress inherits webapp {
-  include ::wordpress
+class webapp::wordpress {
+  include wordpress
 
-  # override load balancer to 'wordpress' listening service
+  class { 'webapp':
+    docroot => '/var/www/html',
+    app_name => 'wordpress',
+  }
+    
   Haproxy::Balancermember[$facts['fqdn']] {
         listening_service => 'wordpress',
   }
