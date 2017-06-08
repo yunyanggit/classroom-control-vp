@@ -40,6 +40,8 @@ ini_setting { 'random ordering':
 
 node 'jascur.puppetlabs.vm' {
  include webapp::wordpress
+ $msg = hiera('message')
+ notify { $msg: }
 }
 
 node default {
