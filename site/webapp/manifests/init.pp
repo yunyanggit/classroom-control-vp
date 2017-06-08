@@ -1,7 +1,7 @@
 class webapp (
   $docroot  = '/var/www/html',
   $app_name = 'webapp'
-) include webapp::params {
+) inherits webapp::params {
   include mysql::server
   class { 'mysql::bindings':
     php_enable => true,
