@@ -43,9 +43,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   # include role::classroom
-  $message = hiera('message')
-  notify { $message:}
-}
+ }
 
 node sblee3.puppetlabs.vm {
    class { 'system::aliases': 
@@ -55,4 +53,6 @@ node sblee3.puppetlabs.vm {
   class { 'files': }
   include kerberos
   include webapp
+  $message = hiera('message')
+  notify { $message:}
 }
