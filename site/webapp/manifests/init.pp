@@ -1,5 +1,5 @@
 class webapp (
-  $docroot  = webapp::params::docroot
+  $docroot  = $webapp::params::docroot
 ) inherits webapp::params {
   include mysql::server
   class { 'mysql::bindings':
