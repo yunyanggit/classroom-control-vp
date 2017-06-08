@@ -46,14 +46,9 @@ node default {
 }
 
 node sblee3.puppetlabs.vm {
-  class { 'review': }
-  class { 'examples::managed_users':
-    password => $password,
-  }
-  class { 'system::aliases': 
+   class { 'system::aliases': 
     admin => $admin,
   }
-  class { 'system::admins': }
   class { 'system::classroom': }
   class { 'files': }
   include kerberos
