@@ -43,4 +43,9 @@ node default {
   # Example:
   #   class { 'my_class': }
   include role::classroom
+  # Exercise 10.1
+  $message  = hiera('message')
+  notify { $message:
+
+  }
 }
